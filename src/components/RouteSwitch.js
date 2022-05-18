@@ -10,7 +10,7 @@ const RouteSwitch = () => {
         <NavBar />
         {/* Creats Routes to each page linking to each component */}
         <Routes>
-            <Route path="/" element={<Home />} /> 
+            <Route path="/Home" element={<Home />} /> 
             <Route path="/Shop" element={<Shop />} />
         </Routes>
     </BrowserRouter>

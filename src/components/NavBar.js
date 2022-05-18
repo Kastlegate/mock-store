@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <div>
       <nav id="NavBar">
-        <Link id="homeNav" to="/">Home</Link> |{" "}
+        <Link id="homeNav" to="/Home">Home</Link> |{" "}
         <Link to="Shop">Shop</Link>
       </nav>
     </div>
