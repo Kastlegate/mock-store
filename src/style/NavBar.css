@@ -1,0 +1,29 @@
+#NavBar{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(44, 44, 117);
+    color: white;
+    
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: rgb(180, 180, 228);
+    font-size: 110%;
+ }
+#homeNav{
+    font-size: 120%;
+    text-decoration: none;
+}
+
+#homeNav:hover {
+    font-size: 150%;
+}
+
+
+.NavLinks{
+
+}
