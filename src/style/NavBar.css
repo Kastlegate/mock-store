@@ -13,8 +13,7 @@ a {
 }
 
 a:hover {
-    color: rgb(146, 146, 228);
-    font-size: 110%;
+    color: rgb(255, 236, 129);
  }
 
  #pages{
@@ -25,14 +24,11 @@ a:hover {
     margin: auto;
     justify-content: space-between;
  }
+ 
 #homeNav{
     font-size: 120%;
     text-decoration: none;
 }
-
-/* #homeNav:hover {
-    font-size: 150%;
-} */
 
 #shopNav{
     font-size: 120%;
@@ -44,10 +40,12 @@ a:hover {
     text-decoration: none;
 }
 
-/* #shopNav:hover {
-    font-size: 150%;
-} */
-
+#checkOutCart{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 15px;
+    margin-right: 25px;
+}
 
 .NavLinks{
 

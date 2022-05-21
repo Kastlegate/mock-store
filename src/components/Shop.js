@@ -1,6 +1,6 @@
 import '../style/Shop.css';
 
-function Shop() {
+function Shop(props) {
   return (
     <div id="Shop">
       Shop Page

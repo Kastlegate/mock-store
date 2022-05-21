@@ -1,6 +1,6 @@
 import '../style/CheckOut.css';
 
-function CheckOut() {
+function CheckOut(props) {
   return (
     <div id='CheckOut'>
       Check Out Page

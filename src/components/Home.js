@@ -1,6 +1,6 @@
 import '../style/Home.css';
 
-function Home() {
+function Home(props) {
   return (
     <div id="Home">
       Home Page
