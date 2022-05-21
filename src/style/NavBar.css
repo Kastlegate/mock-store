@@ -3,6 +3,8 @@
     width: 100%;
     background-color: rgb(44, 44, 117);
     color: white;
+    display: flex;
+    flex-direction: row;
     
 }
 
@@ -11,17 +13,40 @@ a {
 }
 
 a:hover {
-    color: rgb(180, 180, 228);
+    color: rgb(146, 146, 228);
     font-size: 110%;
+ }
+
+ #pages{
+    height: fit-content;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
  }
 #homeNav{
     font-size: 120%;
     text-decoration: none;
 }
 
-#homeNav:hover {
+/* #homeNav:hover {
     font-size: 150%;
+} */
+
+#shopNav{
+    font-size: 120%;
+    text-decoration: none;
 }
+
+#aboutNav{
+    font-size: 120%;
+    text-decoration: none;
+}
+
+/* #shopNav:hover {
+    font-size: 150%;
+} */
 
 
 .NavLinks{
