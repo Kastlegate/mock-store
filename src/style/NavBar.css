@@ -1,12 +1,105 @@
+/* font for the logo */
+@font-face {
+
+    font-family: 'logoFont';
+    src: url('./DancingScript-Bold.ttf') format('woff');
+    font-weight: 600;  
+    font-style: normal;   
+}
+
+#logoContainer{
+    height: 65px;
+    width: 100%;
+    background-color: rgb(28, 78, 78);
+}
+
+#logoMain{
+    height: fit-content;
+    width: fit-content;
+    font-size: 50px;
+    color: rgb(250, 252, 130);
+    font-family: 'logoFont';
+    margin: auto;
+}
+
+#subLogoContainer{
+    margin-top: -5px;
+    height: 30px;
+    width: 220px;
+    display: flex;
+    flex-direction: row;
+    margin: -10px auto auto auto;
+    position: relative;
+    /* justify-content: center; */
+}
+
+#fastWindContainer{
+    height: 10px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#windOne{
+    height: 1px;
+    width: 5px;
+    background-color: rgb(250, 252, 130);
+    border-radius: 25px 25px 25px 25px;
+    margin-left: 10px;
+}
+
+#windTwo{
+    height: 1px;
+    width: 10px;
+    background-color: rgb(250, 252, 130);
+    border-radius: 25px 25px 25px 25px;
+    margin-left: 5px;
+}
+
+#windThree{
+    height: 1px;
+    width: 15px;
+    background-color: rgb(250, 252, 130);
+    border-radius: 25px 25px 25px 25px;
+    margin-right: 1px;
+}
+
+#truckContainer{
+    height: 30px;
+    margin-left: 45px;
+    width: 32px;
+    color: rgb(250, 252, 130);
+    display: flex;
+    flex-direction: row;
+}
+
+#truck{
+    margin-top: 10px;
+}
+
+#subLogo{
+    height: fit-content;
+    width: fit-content;
+    font-size: 25px;
+    color: rgb(250, 252, 130);
+    font-family: 'logoFont';
+    margin-left: 23px;
+    right: 0;
+    position: absolute;
+}
+
 #NavBar{
     height: 50px;
     width: 100%;
-    background-color: rgb(44, 44, 117);
+    background-color: rgb(28, 78, 78);
     color: white;
     display: flex;
     flex-direction: row;
     
 }
+
 
 a {
     color: white;
@@ -46,6 +139,8 @@ a:hover {
     margin-top: 15px;
     margin-right: 25px;
 }
+
+
 
 .NavLinks{
 
