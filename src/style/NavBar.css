@@ -8,7 +8,7 @@
 }
 
 #logoContainer{
-    height: 65px;
+    height: 85px;
     width: 100%;
     background-color: rgb(28, 78, 78);
 }
@@ -23,7 +23,7 @@
 }
 
 #subLogoContainer{
-    margin-top: -5px;
+    /* margin-top: -5px; */
     height: 30px;
     width: 220px;
     display: flex;
@@ -91,13 +91,14 @@
 }
 
 #NavBar{
-    height: 50px;
+    height: 30px;
     width: 100%;
     background-color: rgb(28, 78, 78);
     color: white;
     display: flex;
     flex-direction: row;
-    
+    justify-content: center;
+    /* position: fixed; */
 }
 
 
@@ -114,7 +115,7 @@ a:hover {
     width: 200px;
     display: flex;
     flex-direction: row;
-    margin: auto;
+    /* margin-top: 25px; */
     justify-content: space-between;
  }
  
@@ -134,10 +135,13 @@ a:hover {
 }
 
 #checkOutCart{
+    background-color: rgb(28, 78, 78);
     height: fit-content;
     width: fit-content;
-    margin-top: 15px;
-    margin-right: 25px;
+    /* margin-top: 15px; */
+    position: absolute;
+    right: 5px;
+    /* border-radius: 25px 25px 25px 25px; */
 }
 
 

@@ -38,10 +38,7 @@ function NavBar(props) {
           <Link id="shopNav" to="Shop">Shop</Link>
           <Link id="aboutNav" to="About">About Us</Link>
         </div>
-        {/* <div id='checkOutCart' > <Link to='CheckOut'>{shoppingCart}</Link>{props.total}</div> */}
-       
-        
-        
+        <div id='checkOutCart' > <Link to='CheckOut'>{shoppingCart}</Link>{props.total}</div>    
       </nav>
     </div>
   );
