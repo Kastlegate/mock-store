@@ -36,7 +36,7 @@ function NavBar(props) {
         <div id='pages'>
           <Link id="homeNav" to="/">Home</Link>
           <Link id="shopNav" to="Shop">Shop</Link>
-          <Link id="aboutNav" to="About">About Us</Link>
+          <Link id="aboutNav" to="ContactUs">Contact</Link>
         </div>
         <div id='checkOutCart' > <Link to='CheckOut'>{shoppingCart}</Link>{props.total}</div>    
       </nav>

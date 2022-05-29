@@ -9,13 +9,14 @@
     background-color: rgba(0, 0, 0, 0.8);
     height: 80%;
     width: 80%;
-    margin: 40px auto auto auto;
+    margin: 40px auto 40px auto;
     color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(200px, 300px);
     grid-auto-rows: auto;
+    border-radius: 25px 25px 25px 25px;
     /* grid-auto-columns: auto; */
 }
 
@@ -26,7 +27,7 @@
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); */
     margin: 10px auto auto auto;
     padding: 20px;
-    font-size: 25px;
+    font-size: 2vw;
 }
 
 #truckOne{
@@ -47,6 +48,7 @@
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); */
     margin: 0px auto auto auto;
     padding: 20px;
+    font-size: 2vw;
 }
 
 #truckTwo{

@@ -18,8 +18,8 @@ function Home(props) {
         </div>
 
           <div id='homeParagraphTwo'>
-            We have a variety of hot and cold coffees. We also have a selection of Cajun food if you're feelin' a little spicy.
-            
+            We're expanding out to bring the Bayou closer to you with Breezin' Bayou food truck!
+            We have a variety of hot and cold coffees. We also have a selection of Cajun food if you're feelin' a little spicy!            
           </div>
 
         <img id='truckTwo' src={truckTwo}></img>

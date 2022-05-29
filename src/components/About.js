@@ -1,11 +1,11 @@
 import '../style/About.css';
 
-function About() {
+function ContactUs() {
   return (
-    <div id='CheckOut'>
-      About Page
+    <div id='contactUs'>
+      Contact Us
     </div>
   );
 }
 
-export default About;
+export default ContactUs;
