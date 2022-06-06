@@ -1,0 +1,16 @@
+.Card{
+    height: 260px;
+    width: 200px;
+    text-align: center;
+
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.productImage{
+    height: 170px;
+    width: 170px;
+    /* border: 2px solid rgb(255, 255, 255); */
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
+}
+
