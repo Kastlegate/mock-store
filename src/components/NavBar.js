@@ -1,5 +1,7 @@
 import '../style/NavBar.css';
 import '../style/all.css';
+import CartContext from './cartContext'
+import { useContext } from "react"
 import { Link } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,6 +16,9 @@ function NavBar(props) {
   // const truck = <FontAwesomeIcon icon="fa-solid fa-truck-fast" />;
   const truck = <FontAwesomeIcon id='truck' icon="fa-solid fa-truck" />
 
+  const { items } = useContext(CartContext);
+
+  
 
   return (
     <div>
@@ -38,7 +43,7 @@ function NavBar(props) {
           <Link id="shopNav" to="Shop">Shop</Link>
           <Link id="aboutNav" to="ContactUs">Contact</Link>
         </div>
-        <div id='checkOutCart' > <Link to='CheckOut'>{shoppingCart}</Link>{props.total}</div>    
+        <div id='checkOutCart' > <Link to='CheckOut'>{shoppingCart}</Link>{items.length}</div>    
       </nav>
     </div>
   );

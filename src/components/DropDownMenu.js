@@ -1,4 +1,6 @@
 import '../style/DropDownMenu.css';
+import cartContext from './cartContext'
+import { useContext } from "react"
 
 function DropDownMenu(props) {
     
@@ -8,7 +10,7 @@ function DropDownMenu(props) {
         <select name="selectMenu" className="dropDownMenu">
             
         {props.type.map((type) => {
-                        return (<option value={type}>
+                        return (<option value={type} key={type} className='optionText'>
                             {type}
                             </option>)
                        
