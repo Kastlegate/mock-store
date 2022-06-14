@@ -8,12 +8,12 @@ function DropDownMenu(props) {
     <div className="dropMenuContainer"><div className='sizeAndFlavorText'>Choose: </div> 
         <label htmlFor="selectMenu"></label>
         <select name="selectMenu" className="dropDownMenu">
+       
             
         {props.type.map((type) => {
                         return (<option value={type} key={type} className='optionText'>
-                            {type}
-                            </option>)
-                       
+                            {type}  
+                            </option>)                       
                         })}
         </select>
     </div>

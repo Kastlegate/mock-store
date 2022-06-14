@@ -9,20 +9,22 @@ import lexbrew from '../img/lexBrew.jpg'
 import muffaletta from '../img/muffaletta.jpg'
 import tea from '../img/tea.jpg'
 import westsixth from '../img/westsixth.jpg'
-
 import uniqid from "uniqid";
+import { createContext, useContext, useState } from "react";
 
 const Food = [
     {
         id: uniqid(),
+        section: "food",
         image: beignets,        
         name: "Beignets (order of 3)",
         price: [3.99],
         type: null,
-        count: [5]
+        count: [0]
     },
     {
         id: uniqid(),
+        section: "food",
         image: gumbo,       
         name: "Chicken Andouille Gumbo",
         price: [4.99, 9.99],
@@ -31,6 +33,7 @@ const Food = [
     },
     {
         id: uniqid(),
+        section: "food",
         image: muffaletta,
         name: "Muffaletta",
         price: [9.99],
@@ -43,6 +46,7 @@ const Food = [
 const CoffeeAndTea = [
     {
         id: uniqid(),
+        section: "coffeeAndTea",
         image: cafeaulait,       
         name: "Cafe Au Lait",
         price: [3.99, 3.99],
@@ -52,6 +56,7 @@ const CoffeeAndTea = [
 
     {
         id: uniqid(),
+        section: "coffeeAndTea",
         image: latte,       
         name: "Latte",
         price: [4.99, 4.99, 4.99],
@@ -60,6 +65,7 @@ const CoffeeAndTea = [
     },
     {
         id: uniqid(),
+        section: "coffeeAndTea",
         image: tea,
         name: "Tea",
         price: [3, 3, 3],
@@ -68,7 +74,8 @@ const CoffeeAndTea = [
     },
     {
         id: uniqid(),
-        image: italiansoda,        
+        image: italiansoda, 
+        section: "coffeeAndTea",       
         name: "Italian Soda",
         price: [4.50, 4.50],
         type: ['Strawberry', 'Lemon'],
@@ -80,6 +87,7 @@ const CoffeeAndTea = [
 const LocalBeer = [
     {
         id: uniqid(),
+        section: "localBeer",
         image: bluestallion,       
         name: "Blue Stallion",
         price: [5, 5],
@@ -88,6 +96,7 @@ const LocalBeer = [
     },
     {
         id: uniqid(),
+        section: "localBeer",
         image: ethereal,
         name: "Ethereal",
         price: [5, 5],
@@ -96,6 +105,7 @@ const LocalBeer = [
     },
     {
         id: uniqid(),
+        section: "localBeer",
         image: westsixth,        
         name: "West Sixth Brewing Company",
         price: [5, 5],
@@ -104,6 +114,7 @@ const LocalBeer = [
     },
     {
         id: uniqid(),
+        section: "localBeer",
         image: lexbrew,        
         name: "Lexington Brewing and Distilling Company",
         price: [5, 5],
@@ -112,4 +123,45 @@ const LocalBeer = [
     }
 ]
 
-export { Food, CoffeeAndTea, LocalBeer };
+// creates a react context hook
+const ProductContext = createContext();
+
+// creates a provider for the context so the context can ba passed to different components
+export function ProductProvider({ children }){
+    //creates
+    const [food, setFood] = useState(Food);
+    const [coffeeAndTea, setCoffeeAndTea] = useState(CoffeeAndTea);
+    const [localBeer, setLocalBeer] = useState(LocalBeer);
+
+    
+    const increaseCount = (section, id, currentCount) => {
+
+       if(section === "food"){
+        let i = food.findIndex(x => x.id===id);
+        food[i].count[0] = food[i].count[0] + 1;
+        setFood(prevState => [...food]);
+       }
+       else if(section === "coffeeAndTea"){
+        let i = coffeeAndTea.findIndex(x => x.id===id);
+        coffeeAndTea[i].count[0] = coffeeAndTea[i].count[0] + 1;
+        setCoffeeAndTea(prevState => [...coffeeAndTea]);
+       }
+       else if(section === 'localBeer'){
+        let i = localBeer.findIndex(x => x.id===id);
+        localBeer[i].count[0] = localBeer[i].count[0] + 1;
+        setLocalBeer(prevState => [...localBeer]);
+       }
+        
+    };
+
+    return(
+        // sends the items array and addToCart function to any children inside the car provider component
+        <ProductContext.Provider value={{ food, coffeeAndTea, localBeer, increaseCount }}>
+            {children} 
+        </ProductContext.Provider>
+    );
+}
+
+export default ProductContext;
+
+// export { Food, CoffeeAndTea, LocalBeer };

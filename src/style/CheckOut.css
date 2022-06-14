@@ -1,0 +1,21 @@
+#CheckOut{
+
+ display: flex;
+ flex-direction: row 3;
+ flex-wrap: wrap;
+ flex-grow: 1;
+  width: 50%;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 80%;
+  width: 80%;
+  margin: 40px auto 40px auto;
+  border-radius: 25px 25px 25px 25px;
+  color: white;
+}
+
+.itemInCart{
+color: white;
+height: fit-content;
+width: fit-content;
+}

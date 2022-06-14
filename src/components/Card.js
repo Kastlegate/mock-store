@@ -6,6 +6,7 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import CartContext from './cartContext'
 import { useContext } from "react"
+import ProductContext from './Products'
 library.add(faPlus, faMinus)
 
 function Card(props) {
@@ -13,25 +14,17 @@ function Card(props) {
   const plus = <FontAwesomeIcon icon="fa-solid fa-plus" />
   const minus = <FontAwesomeIcon icon="fa-solid fa-minus" />
 
-  const { addToCart } = useContext(CartContext);
+  const { items, addToCart } = useContext(CartContext);
+  const { increaseCount } = useContext(ProductContext)
+  // const [count, setCount] = useState(0)
+  
 
-  const [count, setCounter] = useState(0);
-  const incrementCounter = (id, count) => {
 
-
-  }
-  const decrementCounter = (id, count) => {
-    if (count > 0){
-      setCounter(count - 1)
-    }
-    
-  }
-
-  const showCountOfType = (i) => {
-    return props.count[i]
-  }
+  // const showCountOfType = (i) => {
+  //   return props.count[i]
+  // }
 // I don't know about this situation
-  const typeCount = showCountOfType(0);
+  // const typeCount = showCountOfType(0);
 
   return (
     <div className="Card" key={props.id}>
@@ -44,10 +37,10 @@ function Card(props) {
 
      {/* a container that houses the buttons for the user to add and subtract products*/}
      <div className='priceAndAmount'>       
-       <div className='price'>${props.price[0]}</div>
-       <div className='addAndSubtract' onClick={() => {decrementCounter(props.id, props.count)}}>{minus}</div>
-       <div className='amountAdded'>{typeCount}</div>
-       <div className='addAndSubtract' onClick={() => {addToCart(props.name, props.price)}}>{plus}</div>
+       <div className='price'>${props.price}</div>
+       <div className='addAndSubtract' >{minus}</div>
+       <div className='amountAdded'>{props.count}</div>
+       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, props.count); addToCart( props.name, props.price[0], props.count)}}>{plus}</div>
       </div>
      <div></div>
     
