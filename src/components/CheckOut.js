@@ -11,7 +11,7 @@ function CheckOut(props) {
     <div id='CheckOut'>
       {items.map((item) => (
         <div className='itemInCart'> 
-
+            
             <div>{item.type}</div>         
             <div>{item.name}</div>
             <div>{item.price}</div>

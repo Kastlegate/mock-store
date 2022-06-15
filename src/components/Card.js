@@ -27,6 +27,15 @@ function Card(props) {
    console.log(typeIndex)
   }
 
+   const bypassNull = () => {
+     
+    if (props.type !== null){
+      return props.type[typeIndex];
+    }
+   }
+
+   
+
   return (
     <div className="Card" key={props.id}>
      <img className="productImage"  title={props.name} alt={props.name} src={props.image}></img>
@@ -41,7 +50,7 @@ function Card(props) {
        <div className='price'>${props.price[typeIndex]}</div>
        <div className='addAndSubtract' >{minus}</div>
        <div className='amountAdded'>{props.count[typeIndex]}</div>
-       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.name, props.price[typeIndex], props.count[typeIndex])}}>{plus}</div>
+       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( bypassNull(), props.name, props.price[typeIndex], props.count[typeIndex])}}>{plus}</div>
       </div>
      <div></div>
     
