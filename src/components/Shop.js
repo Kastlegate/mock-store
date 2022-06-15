@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 
 function Shop(props) {
-
+  //
   const { items } = useContext(CartContext);
   const { food } = useContext(ProductContext);
   const { coffeeAndTea } = useContext(ProductContext);
@@ -15,7 +15,7 @@ function Shop(props) {
   return (
     <div id="Shop">
 
-      {/* Menu sections start with food */}
+      {/* Menu sections start here with food. creates cards for products by mapping through each section arrays */}
       <div className='sectionText'>Menu</div>
       <div className='divider'></div>
       <div className='productContainer'>{food.map((food) => {
