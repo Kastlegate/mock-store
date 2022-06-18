@@ -10,14 +10,14 @@ export function CartProvider({ children }){
     const [addedCount, setAddedCount] = useState(0)
     //creates a function to add items to the items array for the cart 
     
-    const addToCart = (type, name, price, count ) => {
+    const addToCart = (image, type, name, price, count ) => {
         console.log(type)
         if(type === null){
             type = "";
         }
         setAddedCount((prevState) => (  count + 1 ));
         // console.log(count)
-        setItems((prevState) => [...prevState, { type, name, price, count }]);
+        setItems((prevState) => [...prevState, { image, type, name, price, count }]);
         
     };
 
