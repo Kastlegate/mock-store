@@ -37,7 +37,7 @@ function Card(props) {
    
 
   return (
-    <div className="Card" key={props.id}>
+    <div className="Card" key={props.id} id={props.id}>
      <img className="productImage"  title={props.name} alt={props.name} src={props.image}></img>
      <div>{props.name}</div>
 
@@ -50,7 +50,7 @@ function Card(props) {
        <div className='price'>${props.price[typeIndex]}</div>
        <div className='addAndSubtract' >{minus}</div>
        <div className='amountAdded'>{props.count[typeIndex]}</div>
-       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex], props.count[typeIndex])}}>{plus}</div>
+       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex], props.count[typeIndex], props.id )}}>{plus}</div>
       </div>
      <div></div>
     

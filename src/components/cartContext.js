@@ -10,14 +10,34 @@ export function CartProvider({ children }){
     const [addedCount, setAddedCount] = useState(0)
     //creates a function to add items to the items array for the cart 
     
-    const addToCart = (image, type, name, price, count ) => {
-        console.log(type)
+    const addToCart = (image, type, name, price, count, id ) => {
+        console.log("ideedely " + id)
         if(type === null){
             type = "";
         }
-        setAddedCount((prevState) => (  count + 1 ));
-        // console.log(count)
-        setItems((prevState) => [...prevState, { image, type, name, price, count }]);
+        // creates a new ID to search for to stop duplication divs of the products
+        let newId = type+name;
+        // if the items array has at least one product
+        if(items.length > 0)  {
+            // grabs the products index if it exists by searching for the newId            
+            let index = items.findIndex(e => e.newId===newId);
+            
+            // if the product does not exist, this adds it
+            if(index === -1){
+                setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId } ]);
+            }
+            // if the newId is not the same as one that is already added, it adds the new product
+            else if(items[index].newId !== newId){
+               
+                    setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId } ]);
+                
+
+            }   
+        }
+        // if the items array does not have at least one product this adds the first product
+        else{
+            setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId } ]);
+        }
         
     };
 

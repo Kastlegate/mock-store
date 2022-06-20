@@ -3,7 +3,6 @@ import { useState } from 'react';
 import CartContext from './cartContext'
 import { useContext } from "react"
 import CheckOutCards from './CheckOutCards'
-import { faTurkishLiraSign } from '@fortawesome/free-solid-svg-icons';
 
 function CheckOut(props) {
 
@@ -20,11 +19,11 @@ function CheckOut(props) {
   return (
     <div id='CheckOut'>
       <div className='sectionText'>Let's Checkout!</div>
-      <div className='divider'></div>
+      {/* <div className='divider'></div> */}
       <div id='checkoutInnerPage'>
       {items.map((item) => (
         
-        <CheckOutCards image={item.image} type={item.type} name={item.name} price={item.price} count={item.count}/>
+        <CheckOutCards id={item.id} image={item.image} type={item.type} name={item.name} price={item.price} count={item.count}  />
         
 
       ))}

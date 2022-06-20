@@ -17,17 +17,6 @@ function CheckOutCardsCard(props) {
   const { items, addToCart } = useContext(CartContext);
   const { increaseCount } = useContext(ProductContext);
 
-
-//   // creates typeindex to get the index of the currently selected type from the select menu 
-//   const [typeIndex, setTypeIndex] = useState(0);
-
-//   //function to let the dropDownMenuComponent update the current "type" of a menu item and pass that to the card to update the 
-//   // price and count of each item
-//   const updateTypeIndex = (index) =>{
-//    setTypeIndex(prevState => index)
-//    console.log(typeIndex)
-//   }
-
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
    const bypassNull = () => {
      
@@ -39,7 +28,7 @@ function CheckOutCardsCard(props) {
    
 
   return (
-    <div className="CheckOutCard" key={props.id}>
+    <div className="CheckOutCard" key={props.id} id={props.id}>
      <img className="checkOutProductImage" title={props.name} alt={props.name} src={props.image}></img>
      {/* organizes the type, name, and price of the item in the cart */}
     <div className='checkOutItemInfo'>     
@@ -51,7 +40,7 @@ function CheckOutCardsCard(props) {
     <div className='checkoutCurrentCountInfo'>      
       <div className='currentCountItems'>{minus}</div>
       <div className='currentCountItems'>{props.count}</div>
-      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id); addToCart( props.image, bypassNull(), props.name, props.price, props.count)}}>{plus}</div>
+      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id); addToCart( props.image, bypassNull(), props.name, props.price, props.count, props.id)}}>{plus}</div>
     </div>
     </div>
   );
