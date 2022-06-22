@@ -29,8 +29,9 @@ function App() {
 
   return (    
     <div id='App' style={{ backgroundImage: `url(${homeBackground})`,backgroundSize: 'cover' }}>
+      <ProductProvider>
       <CartProvider>
-        <ProductProvider>
+        
           <BrowserRouter> 
           {/* inserts tha navbar that will be displayed on all pages */}
               <NavBar />
@@ -43,8 +44,8 @@ function App() {
               </Routes>
               <Footer />
           </BrowserRouter>
-       </ProductProvider>
-      </CartProvider>
+      
+      </CartProvider> </ProductProvider>
     </div>
   );
 }

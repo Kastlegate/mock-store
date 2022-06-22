@@ -135,9 +135,7 @@ export function ProductProvider({ children }){
 
     // a function that increases the amount of an item that has been added to the cart
     const increaseCount = (section, id, typeIndex) => {
-
        if(section === "food"){
-        console.log(typeIndex)
         let i = food.findIndex(x => x.id===id);
         food[i].count[typeIndex] = food[i].count[typeIndex] + 1;
         setFood(prevState => [...food]);

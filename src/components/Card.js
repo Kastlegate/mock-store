@@ -24,7 +24,6 @@ function Card(props) {
   // price and count of each item
   const updateTypeIndex = (index) =>{
    setTypeIndex(prevState => index)
-   console.log(typeIndex)
   }
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
    const bypassNull = () => {
@@ -50,7 +49,7 @@ function Card(props) {
        <div className='price'>${props.price[typeIndex]}</div>
        <div className='addAndSubtract' >{minus}</div>
        <div className='amountAdded'>{props.count[typeIndex]}</div>
-       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex], props.count[typeIndex], props.id )}}>{plus}</div>
+       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex],  props.id, typeIndex, props.section)}}>{plus}</div>
       </div>
      <div></div>
     

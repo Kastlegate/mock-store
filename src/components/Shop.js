@@ -8,9 +8,8 @@ import { useContext } from "react"
 function Shop(props) {
   //
   const { items } = useContext(CartContext);
-  const { food } = useContext(ProductContext);
-  const { coffeeAndTea } = useContext(ProductContext);
-  const { localBeer } = useContext(ProductContext);
+  const { food, coffeeAndTea, localBeer } = useContext(ProductContext);
+
 
   return (
     <div id="Shop">

@@ -13,7 +13,8 @@ function CheckOutCardsCard(props) {
   const plus = <FontAwesomeIcon icon="fa-solid fa-plus" />
   const minus = <FontAwesomeIcon icon="fa-solid fa-minus" />
 
-  // creates contexts from the cart and products contexts to add to the cart and update the item counts 
+  // creates contexts from the cart and products contexts to add to the cart and update the item counts
+  
   const { items, addToCart } = useContext(CartContext);
   const { increaseCount } = useContext(ProductContext);
 
@@ -24,6 +25,28 @@ function CheckOutCardsCard(props) {
       return props.type;
     }
    }
+
+
+  //    const increaseCountOnCheckOutCards = () => {
+  //   if(props.section === "food"){
+  //    let i = food.findIndex(x => x.id===props.id);   
+  //    return food[i].count[props.typeIndex];
+     
+  //   }
+  //   else if(props.section === "coffeeAndTea"){
+  //     let i = coffeeAndTea.findIndex(x => x.id===props.id);
+  //     return coffeeAndTea[i].count[props.typeIndex]
+  //   }
+  //   else if(props.section === 'localBeer'){
+  //     let i = localBeer.findIndex(x => x.id===props.id);
+  //     return localBeer[i].count[props.typeIndex]
+  //   }
+     
+  // };
+
+    
+      
+
 
    
 
@@ -40,7 +63,7 @@ function CheckOutCardsCard(props) {
     <div className='checkoutCurrentCountInfo'>      
       <div className='currentCountItems'>{minus}</div>
       <div className='currentCountItems'>{props.count}</div>
-      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id); addToCart( props.image, bypassNull(), props.name, props.price, props.count, props.id)}}>{plus}</div>
+      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id, props.typeIndex); addToCart( props.image, bypassNull(), props.name, props.price, props.id, props.typeIndex, props.section)}}>{plus}</div>
     </div>
     </div>
   );
