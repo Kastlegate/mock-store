@@ -9,11 +9,10 @@ const CartContext = createContext();
 export function CartProvider({ children }){
     //creates the items array in state to be used in the cart
     const [items, setItems] = useState([]);
-    const [addedCount, setAddedCount] = useState(0)
+    const [addedCount, setAddedCount] = useState('')
     const { increaseCount, food, coffeeAndTea, localBeer } = useContext(ProductContext);
 
-
-
+    // function that returns the amount of an item that are in the cart
     const returnCount = (typeIndex, section, id) => {
         if(section === "food"){
          let i = food.findIndex(x => x.id===id);   
@@ -29,6 +28,7 @@ export function CartProvider({ children }){
         }
          
       };
+
 
     //creates a function to add items to the items array for the cart     
     const addToCart = (image, type, name, price, id, typeIndex, section ) => {
@@ -47,19 +47,16 @@ export function CartProvider({ children }){
             if(index === -1){
                 setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section } ]);
             }
-            // removes the same item and readds it to the array with the updated item count 
+            // creates a duplicate array to update the count of added items
             else if (items[index].newId === newId){
-                console.log(index)
-                
-                setItems(items.filter((item) => item.newId !== newId))
-                setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section  } ]);
-               
-                      
+                const newItems = [...items]
+                newItems[index] = { image, type, name, price, count, id, newId, typeIndex, section };    
+                // saves the new array over the previous one.            
+                setItems([...newItems ]);
                 
             }
             // if the newId is not the same as one that is already added, it adds the new product
-            else if(items[index].newId !== newId){
-               
+            else if(items[index].newId !== newId){               
                 setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section  } ]);
             }   
         }

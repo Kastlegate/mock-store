@@ -132,22 +132,23 @@ export function ProductProvider({ children }){
     const [food, setFood] = useState(Food);
     const [coffeeAndTea, setCoffeeAndTea] = useState(CoffeeAndTea);
     const [localBeer, setLocalBeer] = useState(LocalBeer);
+    const [count, setCount] = useState(0);
 
     // a function that increases the amount of an item that has been added to the cart
     const increaseCount = (section, id, typeIndex) => {
        if(section === "food"){
         let i = food.findIndex(x => x.id===id);
-        food[i].count[typeIndex] = food[i].count[typeIndex] + 1;
+        setCount(food[i].count[typeIndex] = food[i].count[typeIndex] + 1)
         setFood(prevState => [...food]);
        }
        else if(section === "coffeeAndTea"){
         let i = coffeeAndTea.findIndex(x => x.id===id);
-        coffeeAndTea[i].count[typeIndex] = coffeeAndTea[i].count[typeIndex] + 1;
+        setCount(coffeeAndTea[i].count[typeIndex] = coffeeAndTea[i].count[typeIndex] + 1)
         setCoffeeAndTea(prevState => [...coffeeAndTea]);
        }
        else if(section === 'localBeer'){
         let i = localBeer.findIndex(x => x.id===id);
-        localBeer[i].count[typeIndex] = localBeer[i].count[typeIndex] + 1;
+        setCount(localBeer[i].count[typeIndex] = localBeer[i].count[typeIndex] + 1)
         setLocalBeer(prevState => [...localBeer]);
        }
         
