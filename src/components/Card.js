@@ -15,7 +15,7 @@ function Card(props) {
   const minus = <FontAwesomeIcon icon="fa-solid fa-minus" />
 
   // creates contexts from the cart and products contexts to add to the cart and update the item counts 
-  const { items, addToCart } = useContext(CartContext);
+  const { items, addToCart, displayTotal } = useContext(CartContext);
   const { increaseCount } = useContext(ProductContext);
   // creates typeindex to get the index of the currently selected type from the select menu 
   const [typeIndex, setTypeIndex] = useState(0);
@@ -49,7 +49,7 @@ function Card(props) {
        <div className='price'>${props.price[typeIndex]}</div>
        <div className='addAndSubtract' >{minus}</div>
        <div className='amountAdded'>{props.count[typeIndex]}</div>
-       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex],  props.id, typeIndex, props.section)}}>{plus}</div>
+       <div className='addAndSubtract' onClick={() => {increaseCount(props.section, props.id, typeIndex); addToCart( props.image, bypassNull(), props.name, props.price[typeIndex],  props.id, typeIndex, props.section);  }}>{plus}</div>
       </div>
      <div></div>
     

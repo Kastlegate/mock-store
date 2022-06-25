@@ -15,7 +15,7 @@ function CheckOutCardsCard(props) {
 
   // creates contexts from the cart and products contexts to add to the cart and update the item counts
   
-  const { items, addToCart } = useContext(CartContext);
+  const { items, addToCart, displayTotal } = useContext(CartContext);
   const { increaseCount } = useContext(ProductContext);
 
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
@@ -26,29 +26,6 @@ function CheckOutCardsCard(props) {
     }
    }
 
-
-  //    const increaseCountOnCheckOutCards = () => {
-  //   if(props.section === "food"){
-  //    let i = food.findIndex(x => x.id===props.id);   
-  //    return food[i].count[props.typeIndex];
-     
-  //   }
-  //   else if(props.section === "coffeeAndTea"){
-  //     let i = coffeeAndTea.findIndex(x => x.id===props.id);
-  //     return coffeeAndTea[i].count[props.typeIndex]
-  //   }
-  //   else if(props.section === 'localBeer'){
-  //     let i = localBeer.findIndex(x => x.id===props.id);
-  //     return localBeer[i].count[props.typeIndex]
-  //   }
-     
-  // };
-
-    
-      
-
-
-   
 
   return (
     <div className="CheckOutCard" key={props.id} id={props.id}>
@@ -63,7 +40,7 @@ function CheckOutCardsCard(props) {
     <div className='checkoutCurrentCountInfo'>      
       <div className='currentCountItems'>{minus}</div>
       <div className='currentCountItems'>{props.count}</div>
-      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id, props.typeIndex); addToCart( props.image, bypassNull(), props.name, props.price, props.id, props.typeIndex, props.section)}}>{plus}</div>
+      <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id, props.typeIndex); addToCart( props.image, bypassNull(), props.name, props.price, props.id, props.typeIndex, props.section); }}>{plus}</div>
     </div>
     </div>
   );

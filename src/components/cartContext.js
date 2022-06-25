@@ -9,9 +9,19 @@ const CartContext = createContext();
 export function CartProvider({ children }){
     //creates the items array in state to be used in the cart
     const [items, setItems] = useState([]);
-    const [addedCount, setAddedCount] = useState('')
-    const { increaseCount, food, coffeeAndTea, localBeer } = useContext(ProductContext);
+    const { food, coffeeAndTea, localBeer } = useContext(ProductContext);
+    const [total, setTotal] = useState(0);
 
+    const updateTotal = (array) =>{
+        let updatedTotal = 0;
+        array.forEach(element  => {
+            updatedTotal = updatedTotal + (element.price * element.count);
+            console.log(element.price + " x " + element.count)
+            })
+            setTotal(updatedTotal.toFixed(2))
+            
+    }
+    
     // function that returns the amount of an item that are in the cart
     const returnCount = (typeIndex, section, id) => {
         if(section === "food"){
@@ -63,13 +73,16 @@ export function CartProvider({ children }){
         // if the items array does not have at least one product this adds the first product
         else{
             setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section  } ]);
+
         }
         
     };
 
+    useEffect(() => {   updateTotal(items)  });
+    
     return(
         // sends the items array and addToCart function to any children inside the cart provider component
-        <CartContext.Provider value={{ items, setItems, addToCart }}>
+        <CartContext.Provider value={{ items, setItems, addToCart, total, updateTotal }}>
             {children} 
         </CartContext.Provider>
     );

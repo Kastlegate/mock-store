@@ -6,18 +6,26 @@ import CheckOutCards from './CheckOutCards'
 
 function CheckOut(props) {
 
-  const { items } = useContext(CartContext); 
+  const { items, total } = useContext(CartContext); 
+
+
   return (
     <div id='CheckOut'>
       <div className='sectionText'>Let's Checkout!</div>
-      {/* <div className='divider'></div> */}
+      <div className='divider'></div>
       <div id='checkoutInnerPage'>
-      {items.map((item) => (
-        <CheckOutCards id={item.id} image={item.image} type={item.type} name={item.name} price={item.price} count={item.count} typeIndex={item.typeIndex} section={item.section}  />
-        
-
-      ))}
+      <div className='sectionText' id='yourCart'>
+        <div>Your Cart</div>
+        <div id='emptyCart'>{items.length===0 ? "Add something to your order!" :null}</div>
       </div>
+      {items.map((item) => (
+        <CheckOutCards key={item.newId} id={item.id} image={item.image} type={item.type} name={item.name} price={item.price} count={item.count} typeIndex={item.typeIndex} section={item.section}  />
+      ))}
+      {items.length>0 ?  <div id='yourTotal'>
+        The Total Price of your order is: ${total}
+      </div> :null}
+      </div>
+     
     </div>
   );
 }
