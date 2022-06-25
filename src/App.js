@@ -32,7 +32,7 @@ function App() {
       <ProductProvider>
       <CartProvider>
         
-          <BrowserRouter> 
+          <BrowserRouter > 
           {/* inserts tha navbar that will be displayed on all pages */}
               <NavBar />
               {/* Creats Routes to each page linking to each component */}
