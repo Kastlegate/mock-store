@@ -18,10 +18,11 @@ function App() {
 
   return (    
     <div id='App' style={{ backgroundImage: `url(${homeBackground})`,backgroundSize: 'cover' }}>
+      <HashRouter> 
       <ProductProvider>
       <CartProvider>
         
-          <HashRouter basename="http://kastlegate.github.io/mock-store/"> 
+         
           {/* inserts tha navbar that will be displayed on all pages */}
               <NavBar />
               {/* Creats Routes to each page linking to each component */}
@@ -32,9 +33,10 @@ function App() {
                   <Route path="/CheckOut" element={<CheckOut />} />
               </Routes>
               <Footer />
-          </HashRouter>
+        
       
-      </CartProvider> </ProductProvider>
+      </CartProvider> </ProductProvider>  
+      </HashRouter>
     </div>
   );
 }
