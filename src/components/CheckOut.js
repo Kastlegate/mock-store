@@ -23,6 +23,7 @@ function CheckOut(props) {
       ))}
       {items.length>0 ?  <div id='yourTotal'>
         The Total Price of your order is: ${total}
+        <div id='orderButton'>Place Order</div>
       </div> :null}
       </div>
      

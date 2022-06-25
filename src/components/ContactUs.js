@@ -4,12 +4,16 @@ import frenchquater from '../img/frenchquater.jpg';
 
 function ContactUs() {
   return (
-    <div id='contactUs'>
-        <img className='contactImage'  src={customer}></img>
-        <div className='contactText'>
-            Founded in 1987 by Kendal Bonat, she brought her passion for New Orleans culture to Kentucky.            
-        </div>
-
+    <div id='contact'>
+        <div className='contactPageLayout'>
+        <div className='block'>
+            <img className='pic' src={frenchquater}></img>
+            
+            <div className='paragraph'>
+                Founded in 1987 by Kendal Bonat, she brought her passion for New Orleans culture to Kentucky.            
+            </div>
+        </div> 
+        <div className='blockTwo'>
         <div id='contactContainer'>
             <div id='contactUsBanner'>Contact Us</div>
             <div id='contactInfo'>
@@ -25,7 +29,9 @@ function ContactUs() {
                 </div>
             </div>
         </div>
-        <img className='contactImage' src={frenchquater}></img>
+        <img className='pic'  src={customer} ></img>
+        </div>      
+    </div>
     </div>
   );
 }

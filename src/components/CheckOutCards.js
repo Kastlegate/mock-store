@@ -16,7 +16,7 @@ function CheckOutCardsCard(props) {
   // creates contexts from the cart and products contexts to add to the cart and update the item counts
   
   const { items, addToCart, displayTotal } = useContext(CartContext);
-  const { increaseCount } = useContext(ProductContext);
+  const { increaseCount, decreaseCount } = useContext(ProductContext);
 
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
    const bypassNull = () => {
@@ -38,7 +38,7 @@ function CheckOutCardsCard(props) {
     </div>
     {/* organizes the add, subtract, and current count of the item in the cart */}
     <div className='checkoutCurrentCountInfo'>      
-      <div className='currentCountItems'>{minus}</div>
+      <div className='currentCountItems'onClick={() => {decreaseCount(props.section, props.id, props.typeIndex); addToCart( props.image, bypassNull(), props.name, props.price, props.id, props.typeIndex, props.section, true); }}>{minus}</div>
       <div className='currentCountItems'>{props.count}</div>
       <div className='currentCountItems' onClick={() => {increaseCount(props.section, props.id, props.typeIndex); addToCart( props.image, bypassNull(), props.name, props.price, props.id, props.typeIndex, props.section); }}>{plus}</div>
     </div>

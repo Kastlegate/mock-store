@@ -14,13 +14,24 @@ export function CartProvider({ children }){
 
     const updateTotal = (array) =>{
         let updatedTotal = 0;
+        let totalCounts = 0
         array.forEach(element  => {
             updatedTotal = updatedTotal + (element.price * element.count);
-            console.log(element.price + " x " + element.count)
+            if(element.count > 0){
+                totalCounts = totalCounts + 1
+            }
             })
+            // if no items have a count this resets the cart
+            if(totalCounts === 0 && items.length !== 0)
+            {
+                setItems([]);
+            }
+            
             setTotal(updatedTotal.toFixed(2))
+ 
             
     }
+
     
     // function that returns the amount of an item that are in the cart
     const returnCount = (typeIndex, section, id) => {
@@ -41,7 +52,7 @@ export function CartProvider({ children }){
 
 
     //creates a function to add items to the items array for the cart     
-    const addToCart = (image, type, name, price, id, typeIndex, section ) => {
+    const addToCart = (image, type, name, price, id, typeIndex, section) => {
         if(type === null){
             type = "";
         }
@@ -59,6 +70,7 @@ export function CartProvider({ children }){
             }
             // creates a duplicate array to update the count of added items
             else if (items[index].newId === newId){
+                
                 const newItems = [...items]
                 newItems[index] = { image, type, name, price, count, id, newId, typeIndex, section };    
                 // saves the new array over the previous one.            
@@ -72,13 +84,13 @@ export function CartProvider({ children }){
         }
         // if the items array does not have at least one product this adds the first product
         else{
-            setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section  } ]);
-
+                setItems((prevState) => [...prevState, { image, type, name, price, count, id, newId, typeIndex, section  } ]);
         }
-        
+        return items.length
     };
 
     useEffect(() => {   updateTotal(items)  });
+    
     
     return(
         // sends the items array and addToCart function to any children inside the cart provider component

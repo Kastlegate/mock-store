@@ -6,60 +6,77 @@
     overflow: hidden;
 }
 
-#homePageLayout{
+.homePageLayout{
     background-color: rgba(0, 0, 0, 0.8);
     height: 80%;
     width: 80%;
     margin: 40px auto 40px auto;
     color: white;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: row wrap;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(200px, 300px);
-    grid-auto-rows: auto;
+    grid-auto-rows: auto; */
     border-radius: 25px 25px 25px 25px;
     /* grid-auto-columns: auto; */
 }
 
-#homeParagraphOne{
-    height: 80%;
-    width: 80%;
+.pic{
+    height: 200px;
+    width: 250px;
+    margin: 20px auto auto auto;
+    border: 2px solid white;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
+}
+
+.paragraph{
+    height: fit-content;
+    width: 50%;
+    font-size: 20px;
     /* border: 2px solid white;
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); */
     margin: 10px auto auto auto;
-    padding: 20px;
-    font-size: 2vw;
+    
 }
 
-#truckOne{
-    height: auto;
-    width: auto;
-    margin: 20px auto auto auto;
-    max-height: 80%;
-    max-width: 80%;
 
-    border: 2px solid white;
-    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
-}
-
-#homeParagraphTwo{
-    height: 80%;
+.block{
+    display: flex;
+    flex-direction: row;
     width: 80%;
-    /* border: 2px solid white;
-    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); */
-    margin: 0px auto auto auto;
-    padding: 20px;
-    font-size: 2vw;
+    height: fit-content;
+    margin: auto;
+    margin-top: 10px;
+}
+.blockTwo{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-#truckTwo{
-    height: auto;
-    width: auto;
-    /* padding: 20px; */
-    max-height: 60%;
-    max-width:60%;
-    /* min-width: 20%; 
-    min-height: 50%; */
-    border: 2px solid white;
-    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5);
-}
+@media (max-width: 576px) { 
+    .homePageLayout{
+     flex-direction: column;
+     }
+    .paragraph{
+        width: 80%;
+        font-size: 20px;
+    }
+    .block{
+     flex-direction: column;
+     }
+     .blockTwo{
+        flex-direction: column-reverse;
+    }
+    .homePageLayout{
+        width: 90%;
+    
+    }
+   }

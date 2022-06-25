@@ -22,9 +22,51 @@
   border-radius: 25px 25px 25px 25px;
 }
 
+#orderButton{
+  background-color: rgb(28, 78, 78);
+  border-radius: 25px 25px 25px 25px;
+  height: 20px;
+  width: 100px;
+  text-align: center;
+  color: rgb(250, 252, 130);
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid;
+  box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5); 
+}
 
-/* .itemInCart{
-color: white;
-height: fit-content;
-width: fit-content;
-} */
+#yourCart{
+  width: 80%;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  background-color: rgb(34, 92, 92);
+  height: fit-content;
+  max-height: fit-content;
+  color: white;
+  border: 1px solid;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); 
+}
+
+#emptyCart{
+ font-size: 60%;
+
+}
+
+#yourTotal{
+ width: 80%;
+ text-align: center;
+ max-width: 500px;
+ margin: auto;
+
+ margin-top: 30px;
+ background-color: rgb(34, 92, 92);
+ height: 110px;
+ color: white;
+ border: 1px solid;
+ margin-top: 15px;
+ margin-bottom: 15px;
+ box-shadow: 5px 5px 5px 5px rgb(0, 0, 0, 0.5); 
+}

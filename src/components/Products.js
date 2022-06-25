@@ -154,9 +154,34 @@ export function ProductProvider({ children }){
         
     };
 
+    // a function that decreases the amount of an item that has been added to the cart
+    const decreaseCount = (section, id, typeIndex) => {
+        if(section === "food"){
+            let i = food.findIndex(x => x.id===id);
+            if(food[i].count[typeIndex] > 0){
+            setCount(food[i].count[typeIndex] = food[i].count[typeIndex] - 1)
+            setFood(prevState => [...food]);
+            }
+        }
+        else if(section === "coffeeAndTea"){
+            let i = coffeeAndTea.findIndex(x => x.id===id);
+            if(coffeeAndTea[i].count[typeIndex] > 0){
+            setCount(coffeeAndTea[i].count[typeIndex] = coffeeAndTea[i].count[typeIndex] - 1)
+            setCoffeeAndTea(prevState => [...coffeeAndTea]);
+            }            
+        }
+        else if(section === 'localBeer'){
+            let i = localBeer.findIndex(x => x.id===id);
+            if(localBeer[i].count[typeIndex] > 0){
+            setCount(localBeer[i].count[typeIndex] = localBeer[i].count[typeIndex] - 1)
+            setLocalBeer(prevState => [...localBeer]);
+            }
+        }             
+        };
+
     return(
         // sends the items array and addToCart function to any children inside the car provider component
-        <ProductContext.Provider value={{ food, coffeeAndTea, localBeer, increaseCount }}>
+        <ProductContext.Provider value={{ food, coffeeAndTea, localBeer, increaseCount, decreaseCount }}>
             {children} 
         </ProductContext.Provider>
     );
