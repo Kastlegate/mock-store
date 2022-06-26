@@ -23,7 +23,8 @@ function Card(props) {
   //function to let the dropDownMenuComponent update the current "type" of a menu item and pass that to the card to update the 
   // price and count of each item
   const updateTypeIndex = (index) =>{
-   setTypeIndex(prevState => index)
+    let newIndex = index;
+   setTypeIndex(newIndex)
   }
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
    const bypassNull = () => {

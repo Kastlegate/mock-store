@@ -138,8 +138,9 @@ export function ProductProvider({ children }){
     const increaseCount = (section, id, typeIndex) => {
        if(section === "food"){
         let i = food.findIndex(x => x.id===id);
-        setCount(food[i].count[typeIndex] = food[i].count[typeIndex] + 1)
-        setFood(prevState => [...food]);
+        let newFoodArray = [...food]
+        newFoodArray[i].count[typeIndex] = newFoodArray[i].count[typeIndex] + 1;
+        setFood([...newFoodArray]);
        }
        else if(section === "coffeeAndTea"){
         let i = coffeeAndTea.findIndex(x => x.id===id);
@@ -159,8 +160,9 @@ export function ProductProvider({ children }){
         if(section === "food"){
             let i = food.findIndex(x => x.id===id);
             if(food[i].count[typeIndex] > 0){
-            setCount(food[i].count[typeIndex] = food[i].count[typeIndex] - 1)
-            setFood(prevState => [...food]);
+            let newFoodArray = [...food]
+            newFoodArray[i].count[typeIndex] = newFoodArray[i].count[typeIndex] - 1;
+            setFood([...newFoodArray]);
             }
         }
         else if(section === "coffeeAndTea"){
