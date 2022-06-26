@@ -27,7 +27,7 @@ function App() {
               <NavBar />
               {/* Creats Routes to each page linking to each component */}
               <Routes>
-                  <Route path="mock-store/" element={<Home />} /> 
+                  <Route path="/" element={<Home />} /> 
                   <Route path="/Shop" element={<Shop  />} />
                   <Route path="/ContactUs" element={<ContactUs />} />
                   <Route path="/CheckOut" element={<CheckOut />} />
