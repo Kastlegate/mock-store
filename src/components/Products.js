@@ -144,13 +144,15 @@ export function ProductProvider({ children }){
        }
        else if(section === "coffeeAndTea"){
         let i = coffeeAndTea.findIndex(x => x.id===id);
-        setCount(coffeeAndTea[i].count[typeIndex] = coffeeAndTea[i].count[typeIndex] + 1)
-        setCoffeeAndTea(prevState => [...coffeeAndTea]);
+        let newCoffeeAndTeaArray = [...coffeeAndTea];
+        newCoffeeAndTeaArray[i].count[typeIndex] = newCoffeeAndTeaArray[i].count[typeIndex] + 1
+        setCoffeeAndTea([...newCoffeeAndTeaArray]);
        }
        else if(section === 'localBeer'){
         let i = localBeer.findIndex(x => x.id===id);
-        setCount(localBeer[i].count[typeIndex] = localBeer[i].count[typeIndex] + 1)
-        setLocalBeer(prevState => [...localBeer]);
+        let newLocalBeerArray = [...localBeer];
+        newLocalBeerArray[i].count[typeIndex] = newLocalBeerArray[i].count[typeIndex] + 1;
+        setLocalBeer([...newLocalBeerArray])
        }
         
     };
@@ -168,15 +170,18 @@ export function ProductProvider({ children }){
         else if(section === "coffeeAndTea"){
             let i = coffeeAndTea.findIndex(x => x.id===id);
             if(coffeeAndTea[i].count[typeIndex] > 0){
-            setCount(coffeeAndTea[i].count[typeIndex] = coffeeAndTea[i].count[typeIndex] - 1)
-            setCoffeeAndTea(prevState => [...coffeeAndTea]);
+                let i = coffeeAndTea.findIndex(x => x.id===id);
+                let newCoffeeAndTeaArray = [...coffeeAndTea];
+                newCoffeeAndTeaArray[i].count[typeIndex] = newCoffeeAndTeaArray[i].count[typeIndex] - 1
+                setCoffeeAndTea([...newCoffeeAndTeaArray]);
             }            
         }
         else if(section === 'localBeer'){
             let i = localBeer.findIndex(x => x.id===id);
             if(localBeer[i].count[typeIndex] > 0){
-            setCount(localBeer[i].count[typeIndex] = localBeer[i].count[typeIndex] - 1)
-            setLocalBeer(prevState => [...localBeer]);
+                let newLocalBeerArray = [...localBeer];
+                newLocalBeerArray[i].count[typeIndex] = newLocalBeerArray[i].count[typeIndex] - 1;
+                setLocalBeer([...newLocalBeerArray])
             }
         }             
         };

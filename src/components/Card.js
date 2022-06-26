@@ -24,7 +24,7 @@ function Card(props) {
   // price and count of each item
   const updateTypeIndex = (index) =>{
     let newIndex = index;
-   setTypeIndex(newIndex)
+   setTypeIndex(newIndex);
   }
     // function that checks if there is a type and returns it if true so it can be passed to the checkout
    const bypassNull = () => {
