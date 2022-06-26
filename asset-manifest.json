@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mock-store/static/css/main.78ea1a45.css",
-    "main.js": "/mock-store/static/js/main.1e23d6ac.js",
+    "main.js": "/mock-store/static/js/main.0bea0937.js",
     "static/js/787.11c5d70f.chunk.js": "/mock-store/static/js/787.11c5d70f.chunk.js",
     "static/media/truckOne.jpg": "/mock-store/static/media/truckOne.cf3516da5e72d4821361.jpg",
     "static/media/home.jpg": "/mock-store/static/media/home.ecd099cbfbb381441ea7.jpg",
@@ -37,11 +37,11 @@
     "static/media/fa-regular-400.woff2": "/mock-store/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/mock-store/index.html",
     "main.78ea1a45.css.map": "/mock-store/static/css/main.78ea1a45.css.map",
-    "main.1e23d6ac.js.map": "/mock-store/static/js/main.1e23d6ac.js.map",
+    "main.0bea0937.js.map": "/mock-store/static/js/main.0bea0937.js.map",
     "787.11c5d70f.chunk.js.map": "/mock-store/static/js/787.11c5d70f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.78ea1a45.css",
-    "static/js/main.1e23d6ac.js"
+    "static/js/main.0bea0937.js"
   ]
 }
